@@ -25,7 +25,7 @@ export const users = [
 export const reviews = [
   {
     id: 1,
-    restaurantId: 1,
+    barId: 1,
     title: "とんこつラーメン",
     comment: "おいしい。",
     userId: 1,
@@ -35,7 +35,7 @@ export const reviews = [
   },
   {
     id: 2,
-    restaurantId: 1,
+    barId: 1,
     title: "キャベツトッピング",
     comment: "うまい。",
     userId: 2,
@@ -45,7 +45,7 @@ export const reviews = [
   },
   {
     id: 3,
-    restaurantId: 1,
+    barId: 1,
     title: "チャーハン",
     comment: "美味。",
     userId: 3,
@@ -55,7 +55,7 @@ export const reviews = [
   },
   {
     id: 4,
-    restaurantId: 2,
+    barId: 2,
     title: "家系ラーメン",
     comment: "デリシャス。",
     userId: 1,
@@ -65,7 +65,7 @@ export const reviews = [
   },
   {
     id: 5,
-    restaurantId: 2,
+    barId: 2,
     title: "学生に人気",
     comment: "絶品。",
     userId: 3,
@@ -75,11 +75,11 @@ export const reviews = [
   },
 ];
 
-export const restaurants = [
+export const bars = [
   {
     id: 1,
     name: "ラーメン英 下高井戸店",
-    image: "/images/restaurants/1.jpg",
+    image: "/images/bars/1.jpg",
     map:
       '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.693442376997!2d139.6321131408691!3d35.66172581258806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4eb9644808e5e833!2z44Op44O844Oh44Oz6IuxIOS4i-mrmOS6leaIuOW6lw!5e0!3m2!1sja!2sjp!4v1607814449799!5m2!1sja!2sjp" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>',
     reviews: [reviews[0], reviews[1], reviews[2]],
@@ -89,7 +89,7 @@ export const restaurants = [
   {
     id: 2,
     name: "ラーメン桜道家",
-    image: "/images/restaurants/2.jpg",
+    image: "/images/bars/2.jpg",
     map:
       '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6483.209791322628!2d139.63220908689902!3d35.66210495943449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x28f7261d927e6b0e!2z44Op44O844Oh44Oz5qGc6YGT5a62!5e0!3m2!1sja!2sjp!4v1607819444355!5m2!1sja!2sjp" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>',
     reviews: [reviews[3], reviews[4]],
@@ -119,7 +119,7 @@ export const restaurants = [
   {
     id: 5,
     name: "麺匠 ようすけ 鶏煮亭 下高井戸店",
-    image: "/images/restaurants/5.jpg",
+    image: "/images/bars/5.jpg",
     map:
       '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.7116136690794!2d139.63992140856143!3d35.665935130405515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfb8efc788ed8ab9c!2z6bq65YygIOOCiOOBhuOBmeOBkSDpto_nha7kuq0g5LiL6auY5LqV5oi45bqX!5e0!3m2!1sja!2sjp!4v1607820440803!5m2!1sja!2sjp" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>',
     reviews: [],
