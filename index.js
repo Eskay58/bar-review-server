@@ -1,19 +1,22 @@
 import express from "express";
+import cors from "cors";
 import * as data from "./sample-data.js";
 
 const app = express();
+app.use(cors());
 
 app.get("/bars", async (req, res) => {
   const limit = +req.query.limit || 5;
   const offset = +req.query.offset || 0;
-  const bar = data.bars;
+  const bars = data.bars;
 
   res.json({
-    rows: bar.slice(offset, offset + limit),
-    count: bar.length,
+    rows: bars.slice(offset, offset + limit),
+    count: bars.length,
   });
 })
 
+// :barId = placeHolder
 app.get("/bars/:barId", async (req, res) => {
   const barId = +req.params.barId;
   const bar = data.bars.find(

@@ -1,1 +1,23 @@
-エンドポイントの実装が終わったら以下のようにサーバーの起動を行います。
+開発者ツールのコンソールを確認すると以下のようなエラーが見られるでしょう。
+
+Access to fetch at 'http://localhost:5000/restaurants?limit=3' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+
+現在の Web では、セキュリティ上の理由で異なるオリジンへの API リクエストは制限されています。フロントエンドのオリジンが http://localhost:3000 であるのに対して API サーバーのオリジンが http://localhost:5000 と異なるため、この制限に引っかかっているということです。これを解消するためには API サーバー側でどのオリジンからのアクセスを許可するという設定をしなければいけません。どこのオリジンからアクセスされても良いような API サーバーであったとしても、「どこのオリジンからもアクセスされても良い」ということを明示的に設定しておく必要があります。
+
+フロントエンドと異なるオリジンとの通信は CORS（Cross-Origin Resource Sharing） と呼ばれます。改めてサーバー側プログラムに戻って CORS の設定を追加しましょう。
+
+まずは server ディレクトリ内で以下のコマンドを実行して cors パッケージをインストールします。
+
+$ npm i cors
+
+次に server/index.js を以下のように編集することで CORS の設定が可能となります。ここでは、この API サーバーはどのオリジンからのリクエストも受け付けるようになっています。
+
+server/index.js
+import express from "express";
+import cors from "cors";
+import * as data from "./sample-data.js";
+
+const app = express();
+app.use(cors());
+
+API サーバーを再起動した後にもう一度 http://localhost:3000 にアクセスしてみましょう。こんどは API サーバーからのレスポンスを受け取って正しくページの表示ができているはずです。ラーメン店の名前や「全てのラーメン店を見る」のボタンを押してページの遷移がうまくいくかも確認してみましょう。
